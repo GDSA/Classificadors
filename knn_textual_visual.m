@@ -3,7 +3,7 @@ clear all
 
 %Leemos nuestro txt de Clasificacion
 
-fid= fopen('resultatsHISTBLOCv3.txt');
+fid= fopen('21.txt');
 M = textscan(fid, '%s%s');
 fclose(fid);
 
@@ -74,12 +74,11 @@ else if ( ~strcmp(type21,type31) && strcmp(type31, type33)),    %% sino, knn
     fprintf(archivo,'\r\n');
   
     
-        else 
-        %% si no coincidimos nadie hacemos uso de la "conocida" distribución de probabilidad
-        %%donde hay un 80% de non_ event, que es 
+        else %% si no coincidimos nadie hacemos uso de la "conocida" distribución de probabilidad  donde hay un 80% de non_ event, que es 
             % lo que han hecho algunos de los grupos de textual, cuando
             % en principio no nos deberíamos de basar nunca en datos
             % desconocidos para crear un clasificador.
+             fprintf(archivo,id21{i});
     fprintf(archivo,' ');
     fprintf(archivo,'non_event');
     fprintf(archivo,'\r\n'); 
